@@ -142,13 +142,19 @@ h2 {
 
 .links a {
   color: var(--text);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   border-bottom: 1px solid transparent;
 }
 
 .links a:hover {
   color: var(--accent);
   border-bottom-color: var(--accent);
+}
+
+.links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 @media (max-width: 720px) {
