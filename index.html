@@ -14,7 +14,7 @@
         <h1>Alex Carter</h1>
         <p>Full-stack developer building clean, performant web products with a focus on DX and accessibility.</p>
       </div>
-      <button class="theme-toggle" id="themeToggle">Switch to Light Mode</button>
+      <button class="theme-toggle" id="themeToggle" aria-pressed="true">Switch to Light Mode</button>
     </header>
 
     <section class="card">
@@ -60,12 +60,19 @@
     const body = document.body;
     const SWITCH_TO_LIGHT = 'Switch to Light Mode';
     const SWITCH_TO_DARK = 'Switch to Dark Mode';
-    const initialIsDarkMode = body.getAttribute('data-theme') === 'dark';
-    toggle.textContent = initialIsDarkMode ? SWITCH_TO_LIGHT : SWITCH_TO_DARK;
-    toggle.addEventListener('click', () => {
+
+    const syncThemeToggle = () => {
       const isDarkMode = body.getAttribute('data-theme') === 'dark';
+      toggle.textContent = isDarkMode ? SWITCH_TO_LIGHT : SWITCH_TO_DARK;
+      toggle.setAttribute('aria-pressed', String(isDarkMode));
+      return isDarkMode;
+    };
+
+    syncThemeToggle();
+    toggle.addEventListener('click', () => {
+      const isDarkMode = syncThemeToggle();
       body.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
-      toggle.textContent = isDarkMode ? SWITCH_TO_DARK : SWITCH_TO_LIGHT;
+      syncThemeToggle();
     });
   </script>
 </body>
