@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello, World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alex Carter | Developer</title>
+  <link rel="stylesheet" href="index.css">
 </head>
-<body>
-  <h1>Hello, World</h1>
+<body data-theme="dark">
+  <div class="page">
+    <header class="card hero">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile avatar">
+      <div class="hero-content">
+        <h1>Alex Carter</h1>
+        <p>Full-stack developer building clean, performant web products with a focus on DX and accessibility.</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Light Mode</button>
+    </header>
+
+    <section class="card">
+      <h2>Skills</h2>
+      <div class="tags">
+        <span>JavaScript</span>
+        <span>TypeScript</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>CSS</span>
+        <span>Git</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Portfolio Engine</h3>
+          <p>Static portfolio generator focused on speed and minimal footprint.</p>
+        </article>
+        <article class="project">
+          <h3>TaskFlow</h3>
+          <p>Kanban-based productivity app with offline support and sync.</p>
+        </article>
+        <article class="project">
+          <h3>API Monitor</h3>
+          <p>Lightweight API health dashboard with alerting and metrics.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="card links">
+      <a href="https://github.com/ovo80" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="mailto:alex@example.com">Email</a>
+      <a href="https://x.com" target="_blank" rel="noreferrer">X / Twitter</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+    </footer>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    toggle.addEventListener('click', () => {
+      const dark = body.getAttribute('data-theme') === 'dark';
+      body.setAttribute('data-theme', dark ? 'light' : 'dark');
+      toggle.textContent = dark ? 'Dark Mode' : 'Light Mode';
+    });
+  </script>
 </body>
 </html>
