@@ -14,7 +14,7 @@
         <h1>Alex Carter</h1>
         <p>Full-stack developer building clean, performant web products with a focus on DX and accessibility.</p>
       </div>
-      <button class="theme-toggle" id="themeToggle" aria-live="polite">Switch to Light Mode</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle site theme">Switch to Light Mode</button>
     </header>
 
     <section class="card">
@@ -58,10 +58,12 @@
   <script>
     const toggle = document.getElementById('themeToggle');
     const body = document.body;
+    const SWITCH_TO_LIGHT = 'Switch to Light Mode';
+    const SWITCH_TO_DARK = 'Switch to Dark Mode';
     toggle.addEventListener('click', () => {
       const isDarkMode = body.getAttribute('data-theme') === 'dark';
       body.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
-      toggle.textContent = isDarkMode ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+      toggle.textContent = isDarkMode ? SWITCH_TO_DARK : SWITCH_TO_LIGHT;
     });
   </script>
 </body>
