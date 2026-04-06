@@ -1,12 +1,15 @@
 :root {
-  --bg: #f7f8fc;
-  --bg-elev: rgba(255, 255, 255, 0.78);
+  --bg: #f5f7ff;
+  --bg-elev: rgba(255, 255, 255, 0.72);
+  --bg-elev-strong: rgba(255, 255, 255, 0.9);
   --text: #0f172a;
   --muted: #64748b;
   --line: rgba(15, 23, 42, 0.08);
-  --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  --shadow: 0 18px 50px rgba(15, 23, 42, 0.1);
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
   --accent: #2563eb;
   --accent-2: #7c3aed;
+  --accent-3: #06b6d4;
   --chip: rgba(37, 99, 235, 0.08);
   --chip-text: #1d4ed8;
   --radius-lg: 24px;
@@ -14,14 +17,17 @@
 }
 
 html[data-theme="dark"] {
-  --bg: #0b1020;
+  --bg: #070c1d;
   --bg-elev: rgba(17, 24, 39, 0.72);
+  --bg-elev-strong: rgba(17, 24, 39, 0.9);
   --text: #e5e7eb;
   --muted: #9ca3af;
   --line: rgba(255, 255, 255, 0.08);
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.22);
   --accent: #60a5fa;
   --accent-2: #a78bfa;
+  --accent-3: #22d3ee;
   --chip: rgba(96, 165, 250, 0.12);
   --chip-text: #bfdbfe;
 }
@@ -39,8 +45,9 @@ body {
   margin: 0;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(99, 102, 241, 0.12), transparent 32%),
-    radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 28%),
+    radial-gradient(circle at 8% 4%, rgba(99, 102, 241, 0.2), transparent 34%),
+    radial-gradient(circle at 92% 8%, rgba(14, 165, 233, 0.18), transparent 32%),
+    radial-gradient(circle at 50% 100%, rgba(124, 58, 237, 0.12), transparent 40%),
     var(--bg);
   color: var(--text);
   transition: background 0.25s ease, color 0.25s ease;
@@ -59,6 +66,17 @@ button {
   max-width: 1120px;
   margin: 0 auto;
   padding: 28px 20px 44px;
+  position: relative;
+}
+
+.page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, rgba(37, 99, 235, 0.06), rgba(124, 58, 237, 0.04) 40%, rgba(6, 182, 212, 0.06));
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
 }
 
 .topbar,
@@ -78,31 +96,17 @@ button {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   min-width: 0;
 }
 
-.avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: var(--shadow);
-  flex: none;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.2s ease;
-}
-
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.brand:hover .avatar {
-  transform: translateY(-1px) scale(1.02);
+.brand-text h1 {
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .brand-text {
@@ -143,13 +147,15 @@ button {
   padding: 10px 14px;
   cursor: pointer;
   color: var(--text);
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-soft);
 }
 
 .btn:hover,
 .link-card:hover {
   transform: translateY(-1px);
   border-color: rgba(37, 99, 235, 0.28);
+  box-shadow: var(--shadow);
 }
 
 .btn-link {
@@ -166,8 +172,18 @@ button {
 }
 
 .card {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-soft);
   padding: 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  background:
+    linear-gradient(160deg, var(--bg-elev-strong), var(--bg-elev) 48%),
+    var(--bg-elev);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: rgba(37, 99, 235, 0.2);
 }
 
 .hero-card,
@@ -218,6 +234,7 @@ button {
   background: var(--chip);
   border-radius: 999px;
   font-size: 14px;
+  border: 1px solid rgba(37, 99, 235, 0.12);
 }
 
 .projects {
