@@ -1,10 +1,186 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello, World</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="ovo80 的个人主页，支持中英切换、浅色深色主题、头像展示与联系方式。" />
+  <title>ovo80 · Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hello, World</h1>
+  <div class="page" id="page" data-lang="en">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="home">
+        <div class="avatar">
+          <img src="avatar.jpg" alt="ovo80 avatar" />
+        </div>
+        <div class="brand-text">
+          <h1>ovo80</h1>
+          <p class="muted">
+            <span data-i18n="zh">Java 学习者 · Minecraft Mod 开发 · Linux / 网络探索者</span>
+            <span data-i18n="en">Java Learner · Minecraft Modding · Linux / Networking Explorer</span>
+          </p>
+        </div>
+      </a>
+
+      <div class="toolbar">
+        <button class="btn" id="langBtn" type="button" aria-label="Switch language">中</button>
+        <button class="btn" id="themeBtn" type="button" aria-label="Switch theme">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <article class="card hero-card">
+          <p class="eyebrow">
+            <span data-i18n="zh">个人主页 / GitHub Pages</span>
+            <span data-i18n="en">Personal Homepage / GitHub Pages</span>
+          </p>
+
+          <h2 class="title">
+            <span data-i18n="zh">Hi there, I'm ovo80 👋</span>
+            <span data-i18n="en">Hi there, I'm ovo80 👋</span>
+          </h2>
+
+          <p class="subtitle">
+            <span data-i18n="zh">
+              💻 Java 学习者 | 🎮 Minecraft Mod 开发爱好者 | 🌐 Linux & 网络探索者
+              <br />
+              📍 重庆，中国
+              <br />
+              🎓 重庆科技大学在读本科生
+            </span>
+            <span data-i18n="en">
+              💻 Java Learner | 🎮 Minecraft Modding Enthusiast | 🌐 Linux & Networking Explorer
+              <br />
+              📍 Chongqing, China
+              <br />
+              🎓 Undergraduate at Chongqing University of Science and Technology
+            </span>
+          </p>
+
+          <p class="subtitle">
+            <span data-i18n="zh">
+              我喜欢做真正能跑起来的东西——从 Minecraft Mod 到小型后端服务。<br />
+              我特别关注 Linux、网络、部署，以及在实践中理解真实系统如何工作。
+              <br /><br />
+              目前正在通过动手项目和开源实践一步一步提升自己。
+            </span>
+            <span data-i18n="en">
+              I enjoy building things that actually run — from Minecraft mods to small backend services.<br />
+              I'm especially interested in Linux, networking, deployment, and learning how real systems work in practice.
+              <br /><br />
+              Currently learning by doing, improving step by step through hands-on projects and open source practice.
+            </span>
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-link" href="https://github.com/ovo80" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn-link" href="mailto:vanlkl1000@gmail.com">Email</a>
+            <a class="btn btn-link" href="https://space.bilibili.com/" target="_blank" rel="noreferrer">Bilibili</a>
+          </div>
+        </article>
+
+        <aside class="card side-card">
+          <h2>
+            <span data-i18n="zh">技术重点</span>
+            <span data-i18n="en">Tech Focus</span>
+          </h2>
+          <div class="chips" aria-label="skills">
+            <span class="chip">Java</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Networking</span>
+            <span class="chip">Deployment</span>
+            <span class="chip">Minecraft Modding</span>
+            <span class="chip">Open Source</span>
+            <span class="chip">Backend</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="projects">
+        <h2 class="section-title">
+          <span data-i18n="zh">正在探索</span>
+          <span data-i18n="en">Currently Exploring</span>
+        </h2>
+
+        <div class="projects">
+          <article class="card project-card">
+            <div class="tag">01</div>
+            <h3>
+              <span data-i18n="zh">Java / Spring Boot</span>
+              <span data-i18n="en">Java / Spring Boot</span>
+            </h3>
+            <p>
+              <span data-i18n="zh">学习后端开发、接口设计与常见工程实践，逐步构建稳定的服务能力。</span>
+              <span data-i18n="en">Learning backend development, API design, and practical engineering workflows to build reliable services.</span>
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="tag">02</div>
+            <h3>
+              <span data-i18n="zh">Linux / 网络 / 部署</span>
+              <span data-i18n="en">Linux / Networking / Deployment</span>
+            </h3>
+            <p>
+              <span data-i18n="zh">通过服务器、网络与部署实践理解系统运行方式，关注真实环境中的可用性和效率。</span>
+              <span data-i18n="en">Understanding how systems run through servers, networking, and deployment practices, with a focus on real-world reliability and efficiency.</span>
+            </p>
+          </article>
+
+          <article class="card project-card">
+            <div class="tag">03</div>
+            <h3>
+              <span data-i18n="zh">Minecraft Modding</span>
+              <span data-i18n="en">Minecraft Modding</span>
+            </h3>
+            <p>
+              <span data-i18n="zh">把兴趣变成作品，在开发 Mod 的过程中锻炼 Java、调试和问题解决能力。</span>
+              <span data-i18n="en">Turning interest into practice while improving Java, debugging, and problem-solving skills through mod development.</span>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">
+          <span data-i18n="zh">联系我</span>
+          <span data-i18n="en">Contact</span>
+        </h2>
+
+        <div class="links">
+          <a class="link-card" href="mailto:vanlkl1000@gmail.com">
+            <span>Email</span><span>↗</span>
+          </a>
+          <a class="link-card" href="https://github.com/ovo80" target="_blank" rel="noreferrer">
+            <span>GitHub</span><span>↗</span>
+          </a>
+          <a class="link-card" href="https://space.bilibili.com/" target="_blank" rel="noreferrer">
+            <span>Bilibili</span><span>↗</span>
+          </a>
+          <a class="link-card" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+            <span>LinkedIn</span><span>↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>
+        © <span id="year"></span> ovo80.
+        <span data-i18n="zh">从 Mod 到服务器，我通过把事情做出来来学习。</span>
+        <span data-i18n="en">From mods to servers, I learn by making things work.</span>
+      </span>
+      <span class="muted">
+        <span data-i18n="zh">浅色 / 深色 · 中英切换</span>
+        <span data-i18n="en">Light / Dark · CN / EN</span>
+      </span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
