@@ -83,14 +83,15 @@ button {
 }
 
 .avatar {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-radius: 18px;
   overflow: hidden;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   box-shadow: var(--shadow);
   flex: none;
   border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s ease;
 }
 
 .avatar img {
@@ -98,6 +99,10 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.brand:hover .avatar {
+  transform: translateY(-1px) scale(1.02);
 }
 
 .brand-text {
