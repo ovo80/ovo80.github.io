@@ -25,6 +25,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node }} # Use LTS
+          package-manager-cache: false # pnpm installed in a later step; disable auto cache lookup
 
       - name: Checkout
         uses: actions/checkout@v5
@@ -49,6 +50,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node }}
+          package-manager-cache: false # pnpm installed in a later step; disable auto cache lookup
 
       - name: Checkout
         uses: actions/checkout@v5
