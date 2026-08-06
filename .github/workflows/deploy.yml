@@ -27,9 +27,7 @@ jobs:
           node-version: 22
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v5
-        with:
-          version: 9.14.4
+        run: npm install -g pnpm@9.14.4
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
