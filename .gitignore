@@ -29,3 +29,6 @@ yarn.lock
 # ide
 .idea
 *.iml
+
+# pnpm safe-delete temp dirs (stale leftovers, delete manually if any)
+_tmp_*/

@@ -26,7 +26,7 @@ import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-cop
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://ovo.ad/",
+	site: process.env.SITE_URL ?? "https://ovo.ad/", // Cloudflare 默认 ovo.ad，GitHub Pages 构建时用 SITE_URL 覆盖
 	base: "/",
 	trailingSlash: "always",
 	integrations: [

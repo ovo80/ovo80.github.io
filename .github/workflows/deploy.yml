@@ -36,6 +36,8 @@ jobs:
 
       - name: Build
         run: pnpm build
+        env:
+          SITE_URL: https://ovo80.github.io/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
